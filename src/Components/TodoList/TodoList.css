@@ -1,0 +1,13 @@
+.todoList-ui{
+    background-color: #fff3;
+    width: 60%;
+    max-height: 300px ;
+    overflow-y: scroll;
+    padding: 15px;  
+}
+
+
+.line{
+    border-bottom:1px solid #333 ;
+    width: 100%;
+}
