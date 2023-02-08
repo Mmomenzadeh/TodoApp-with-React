@@ -1,0 +1,58 @@
+.todo-ui{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px;
+    align-items: flex-start;    
+}
+
+
+.todo-content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+    flex-wrap: wrap;
+    line-height: 1.3;
+}
+
+.todo-content h2 {
+    color: #f6be14;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.todo-content p{
+    color: #fff;
+    font-size: 15px;
+
+
+}
+
+
+.btn-container{
+    display: flex;
+    gap: 5px;
+}
+
+.btn-ui{
+    border: none;
+    border-radius: 15px;
+    width: 70px;
+    padding: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+.btn-ui button:nth-child(1){
+    background-color: rgb(255,50,50);
+}
+
+.btn-ui button:nth-child(2){
+    background-color: #fd4a60;
+}
+
+.btn-ui button:nth-child(3){
+    background-color: rgb(2, 190, 146);
+}
