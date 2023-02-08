@@ -45,14 +45,14 @@
 
 
 
-.btn-ui button:nth-child(1){
+.btn-container button:nth-child(1){
     background-color: rgb(255,50,50);
 }
 
-.btn-ui button:nth-child(2){
+.btn-container button:nth-child(2){
     background-color: #fd4a60;
 }
 
-.btn-ui button:nth-child(3){
+.btn-container button:nth-child(3){
     background-color: rgb(2, 190, 146);
 }

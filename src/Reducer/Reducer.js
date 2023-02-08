@@ -8,6 +8,8 @@ export const Reducer=(todoState , action)=>{
             id : Math.floor(Math.random()*100000),
             checked : false
         }]
+
+        case "delete_todo" : return todoState.filter((todoItem)=>todoItem.id !== action.payload.id)
             
         
         default:
