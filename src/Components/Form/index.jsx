@@ -4,7 +4,7 @@ import "./Form.css";
 const Form = () => {
   const { todoObject, settodoObject, dispatch } = useContext(TodoContext);
 
-  const createTodo = (e) => {
+  const handlecreateTodo = (e) => {
     e.preventDefault();
     dispatch({
       type: "create_todo",
@@ -38,7 +38,7 @@ const Form = () => {
           />
         </div>
       </div>
-      <button className="form-btn-ui" onClick={createTodo}>
+      <button className="form-btn-ui" onClick={handlecreateTodo}>
         Submit
       </button>
     </div>
