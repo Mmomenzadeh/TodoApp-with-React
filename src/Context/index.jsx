@@ -3,7 +3,9 @@ import { Reducer } from "../Reducer/Reducer";
 
  export const TodoContext = createContext({
     todoObject:"" , settodoObject:()=>{},
-    todoState :[] , dispatch:(command)=>[]
+    todoState :[] , dispatch:(command)=>[],
+    todoInEditeMode:false , settodoInEditeMode:()=>{}
+
  })
 
 
@@ -16,7 +18,8 @@ import { Reducer } from "../Reducer/Reducer";
         checked : false
     }
     const [todoObject , settodoObject ]=useState(initialValue)
-    return <TodoContext.Provider value={{ todoObject , settodoObject ,todoState , dispatch}}>{children}</TodoContext.Provider>
+    const [todoInEditeMode , settodoInEditeMode ]=useState(false)
+    return <TodoContext.Provider value={{ todoObject , settodoObject ,todoState , dispatch ,todoInEditeMode , settodoInEditeMode}}>{children}</TodoContext.Provider>
  }
 
  export default TodoContextProvider

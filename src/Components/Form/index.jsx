@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { TodoContext } from "../../Context";
 import "./Form.css";
 const Form = () => {
-  const { todoObject, settodoObject, dispatch } = useContext(TodoContext);
+  const { todoObject, settodoObject, dispatch, todoInEditeMode ,settodoInEditeMode } =
+    useContext(TodoContext);
 
   const handlecreateTodo = (e) => {
     e.preventDefault();
@@ -13,7 +14,32 @@ const Form = () => {
         desc: todoObject.desc,
       },
     });
+    settodoObject({
+      title: "",
+      desc: "",
+      id: "",
+      checked: "",
+    });
   };
+
+  const handleUpdateTodo =(e)=>{
+    e.preventDefault();
+    settodoInEditeMode(false)
+    dispatch({
+      type:"edite_todo",
+      payload :{
+        title :todoObject .title,
+        desc : todoObject.desc,
+        id : todoInEditeMode
+      }
+    })
+    settodoObject({
+      title: "",
+      desc: "",
+      id: "",
+      checked: "",
+    });
+  }
   return (
     <div className="form-ui">
       <div className="input-container">
@@ -25,6 +51,7 @@ const Form = () => {
             onChange={(e) =>
               settodoObject({ ...todoObject, title: e.target.value })
             }
+            value={todoObject.title}
           />
         </div>
         <div className="input-form">
@@ -35,12 +62,19 @@ const Form = () => {
             onChange={(e) =>
               settodoObject({ ...todoObject, desc: e.target.value })
             }
+            value={todoObject.desc}
           />
         </div>
       </div>
-      <button className="form-btn-ui" onClick={handlecreateTodo}>
-        Submit
-      </button>
+      {!todoInEditeMode ? (
+        <button className="form-btn-ui" onClick={handlecreateTodo}>
+          Submit
+        </button>
+      ) : (
+        <button className="form-btn-ui" onClick={handleUpdateTodo }>
+          Save
+        </button>
+      )}
     </div>
   );
 };
