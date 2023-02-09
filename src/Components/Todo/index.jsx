@@ -4,7 +4,7 @@ import "./Todo.css";
 
 const Todo = ({todoItem}) => {
 
-  const {dispatch} = useContext(TodoContext)
+  const {todoObject, settodoObject, dispatch ,settodoInEditeMode ,todoInEditeMode} = useContext(TodoContext)
 
   const handleTodoDelete =(id)=>{
     dispatch({
@@ -15,6 +15,9 @@ const Todo = ({todoItem}) => {
     })
   }
   const handleTodoEdite =(id)=>{
+    settodoObject(todoItem)
+    settodoInEditeMode(id)
+  
 
   }
   const handleTodoCheck =(id)=>{
