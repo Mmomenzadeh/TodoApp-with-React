@@ -38,7 +38,7 @@ const Todo = ({ todoItem }) => {
   return (
     <li className="todo-ui">
       <div className="todo-content">
-        <h2 style={{textDecoration : todoItem.checked ? "line-through" : null}}>{todoItem.title}</h2>
+        <h2 style={{textDecoration : todoItem.checked ? "line-through" : null , color: todoItem.checked ? "#737474" : null }}>{todoItem.title}</h2>
         <p style={{color: todoItem.checked ? "#737474" : "#fff" }}>{todoItem.desc}</p>
       </div>
       <div className="btn-container">
